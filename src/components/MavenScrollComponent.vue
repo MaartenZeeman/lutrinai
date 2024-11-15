@@ -10,6 +10,10 @@
   function scrollRight() {
     scrollWrapper.value?.scrollBy({ left: 334, behavior: 'smooth' });
   }
+
+  function getImgUrl(imgName: string) {
+    return new URL(`../assets/images/avatars/${imgName}.png`, import.meta.url).href
+  }
 </script>
 
 <template>
@@ -18,7 +22,7 @@
       <article class="scroll-item" v-for="item of mavens" :key="item.id">
         <h2 class="name">{{item.name}}</h2>
         <div class="scroll-item-info">
-          <img :src="`/src/assets/images/avatars/${item.avatar}.png`" alt="">
+          <img :src="`${getImgUrl(item.avatar)}`" alt="">
           <p>{{ item.description }}</p>
         </div>
         <div class="actions-container">
