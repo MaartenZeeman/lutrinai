@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { ChatDetails } from '@/models/chat-details';
-  
+
   defineProps<{
     chat: ChatDetails
   }>()
