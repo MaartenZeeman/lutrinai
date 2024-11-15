@@ -1,14 +1,17 @@
 <script setup lang="ts">
   import type { ChatDetails } from '@/models/chat-details';
 
-  defineProps<{
+  const props = defineProps<{
     chat: ChatDetails
   }>()
+
+  const imgUrl = new URL(`../assets/images/avatars/${props.chat.avatar}.png`, import.meta.url).href
 </script>
 
 <template>
+  {{ imgUrl }}
   <RouterLink to="/chat" class="chat">
-    <img class="avatar" :src="`src/assets/images/avatars/${chat.avatar}.png`" alt="">
+    <img class="avatar" :src="imgUrl" alt="">
     <section class="chat-info">
         <div class="chat-header">
             <h2>{{ chat.name }}</h2>
