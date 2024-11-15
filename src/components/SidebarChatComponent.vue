@@ -9,7 +9,6 @@
 </script>
 
 <template>
-  {{ imgUrl }}
   <RouterLink to="/chat" class="chat">
     <img class="avatar" :src="imgUrl" alt="">
     <section class="chat-info">
